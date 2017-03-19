@@ -16,7 +16,8 @@
         },
         start: start,
         isCellColored: isCellColored,
-        removeColoredCell: removeColoredCell
+        removeColoredCell: removeColoredCell,
+        getColoredCells: function() { return _coleredCells; }
       };
 
       _cellIds = _getCellIds();

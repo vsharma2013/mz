@@ -8,8 +8,11 @@
     function GridController($scope, gridService) {
       var vm = this;
       vm.game = gridService.game;
+      vm.coloredCellCount = null;
+
       vm.start = function() {
         gridService.start();
+        vm.coloredCellCount = gridService.getColoredCells().length;
       };
 
       vm.isCellColored = function(row, col) {
@@ -18,7 +21,7 @@
 
       vm.removeColor = function(row, col) {
         gridService.removeColoredCell(row, col);
+        vm.coloredCellCount = gridService.getColoredCells().length;
       };
-   
     }
 })();
