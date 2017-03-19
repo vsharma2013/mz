@@ -13,6 +13,7 @@
       vm.allowedClicks = false;
       vm.lives = 0;
       vm.interval = null;
+      vm.showCLicks = false;
 
       vm.start = function() {
         gridService.start();
@@ -22,6 +23,7 @@
           --vm.timeRemaining;
           if(vm.timeRemaining === 0) {
             vm.allowedClicks = 3;
+            vm.showCLicks = true;
             $interval.cancel(vm.interval);
           }
         }, 1000);
@@ -35,6 +37,7 @@
         if(vm.timeRemaining === 0 && vm.allowedClicks <= 3) {
           --vm.allowedClicks;
           if(vm.allowedClicks < 0) {
+            vm.showCLicks = false;
             ++vm.lives;
             vm.start();
             return;

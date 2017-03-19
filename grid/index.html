@@ -13,6 +13,7 @@
         <li class= "cell-item stats-color-2">Time: {{vm.timeRemaining}} sec</li>
         <li class= "cell-item stats-color-3">Color cells: {{vm.coloredCellCount}}</li>
         <li class= "cell-item stats-color-4">Grid: {{vm.game.rows.length}} x {{vm.game.columns.length}}</li>
+        <li class= "cell-item" ng-if="vm.showCLicks">Clicks: {{vm.allowedClicks}}</li>
       </ul>
     </div>
     <div class="grid-container">
