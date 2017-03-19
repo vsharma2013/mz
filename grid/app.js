@@ -1,4 +1,4 @@
 (function() {
   'use strict';
-  angular.module('grid.game.app', ['grid.controller']);
+  angular.module('mz.grid.app', ['mz.components.grid']);
 })();

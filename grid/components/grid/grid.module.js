@@ -1,5 +1,5 @@
 (function() {
   'use strict';
   angular
-    .module('grid.component', ['grid.controller', 'grid.service']);
+    .module('mz.components.grid', ['mz.components.grid.controller', 'mz.components.grid.service']);
 })();
