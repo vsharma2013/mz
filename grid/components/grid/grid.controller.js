@@ -14,8 +14,11 @@
       vm.lives = 0;
       vm.interval = null;
       vm.showCLicks = false;
+      vm.started = false;
+      vm.success=false;
 
       vm.start = function() {
+        vm.started = true;
         gridService.start();
         vm.coloredCellCount = gridService.getColoredCells().length;
         vm.timeRemaining = vm.coloredCellCount - 1;
@@ -34,6 +37,8 @@
       };
 
       vm.removeColor = function(row, col) {
+        if(!vm.started || vm.success) {return;}
+
         if(vm.timeRemaining === 0 && vm.allowedClicks <= 3) {
           --vm.allowedClicks;
           if(vm.allowedClicks < 0) {
@@ -46,6 +51,10 @@
 
         gridService.removeColoredCell(row, col);
         vm.coloredCellCount = gridService.getColoredCells().length;
+        if(vm.coloredCellCount === 0) {
+          $interval.cancel(vm.interval);
+          vm.success = true;
+        }
       };
     }
 })();

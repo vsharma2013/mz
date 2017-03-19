@@ -21,8 +21,11 @@
         <li class= "cell-item" ng-repeat="col in vm.game.columns" ng-class="{colored: vm.isCellColored(row, col)}"  ng-click="vm.removeColor(row, col)"></li>
        </ul>
     </div>
-    <div class="action-container">
+    <div class="action-container" ng-if="!vm.started">
       <div class="action-start" ng-click="vm.start()">Start</div>
+    </div>
+    <div class="results-container" ng-if="vm.success">
+      <h2 class="action-success">Congratulations you have won the game !!!</h2>
     </div>
   </div>
   <script type="text/javascript" src="libs/angular.min.js"></script>
