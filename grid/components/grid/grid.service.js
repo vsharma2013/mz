@@ -7,23 +7,38 @@
 
     function GridService() {
       var _cellIds = null;
-      var _colerrdCells = [];
+      var _coleredCells = [];
 
       var service = {
         game: {
           rows: [1,2,3,4],
           columns: [1,2,3,4]
         },
-        getRandomColeredCellIds: getRandomColeredCellIds,
-        removeColoredCellById: removeColoredCellById
+        start: start,
+        isCellColored: isCellColored,
+        removeColoredCell: removeColoredCell
       };
 
       _cellIds = _getCellIds();
 
       return service;
       
-      function getRandomColeredCellIds(count) {
+      function start() {
+        _coleredCells = getRandomColeredCellIds();
+      }
 
+      function isCellColored(cellId) {
+        if (_.isEmpty(_coleredCells)) {return false;}
+
+        return _.find(_coleredCells, function(c) { return c === cellId;} ) ? true : false;
+      }
+
+      function removeColoredCell(cellId) {
+        _coleredCells = _.reject(_coleredCells, function(c) {return c === cellId;});
+      }
+
+      function getRandomColeredCellIds(count) {
+        return ['c-00', 'c-11', 'c-22', 'c-33', 'c-03'];
       }
 
       function removeColoredCellById() {

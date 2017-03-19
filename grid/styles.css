@@ -4,18 +4,61 @@
   margin-left: auto;
   margin-right: auto;
 }
+.app-wrapper .grid-container {
+	margin-top: 10px;
+}
 
-
-.app-wrapper .grid-container .cell-list {
+.app-wrapper .grid-container .cell-list,  .app-wrapper .stats-container .cell-list{
 	list-style: none;
 	display: inline-flex;
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
 
-.app-wrapper .grid-container .cell-list .cell-item {
+.colored {
+	background-color: #2196F3;
+}
+
+.app-wrapper .grid-container .cell-list .cell-item, 
+.app-wrapper .stats-container .cell-list .cell-item  {
 	border-style: solid;
 	border-width: 1px;
 	height: 30px;
-	width: 60px;
+	width: 90px;
+	padding-top: 5px;
+  padding-left: 2px;
+}
+
+.stats-color-1 {
+	background-color: #FFCDD2
+}
+
+.stats-color-2 {
+	background-color: #FF8A80
+}
+
+.stats-color-3 {
+	background-color: #CE93D8
+}
+
+.stats-color-4 {
+	background-color: #64B5F6
+
+}
+.action-container {
+	margin-top: 10px;
+}
+.action-container .action-start {
+	position: relative;
+	left: 30%;
+	top: 5%;
+	width: 100px;
+	height: 30px;
+	background-color: #3F51B5;
+  text-align: center;
+  vertical-align: bottom;
+  line-height: 30px;
+  color: aliceblue;
+  cursor: pointer;
+
 }

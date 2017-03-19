@@ -7,13 +7,26 @@
 </head>
 <body ng-app="mz.grid.app">
   <div class="app-wrapper" ng-controller="GridController as vm">
+    <div class="stats-container">
+      <ul class="cell-list">
+        <li class= "cell-item stats-color-1">Lives: </li>
+        <li class= "cell-item stats-color-2">Time: </li>
+        <li class= "cell-item stats-color-3">Color cells: </li>
+        <li class= "cell-item stats-color-4">Grid: {{vm.game.rows.length}} x {{vm.game.columns.length}}</li>
+      </ul>
+    </div>
     <div class="grid-container">
       <ul class="cell-list" ng-repeat="row in vm.game.rows"> 
-        <li class= "cell-item" ng-repeat="col in vm.game.columns" ng-attr-id="{{ 'c-' + $parent.$index + $index}}"></li>
+        <li class= "cell-item" ng-repeat="col in vm.game.columns" ng-attr-id="{{ 'c-' + $parent.$index + $index}}" 
+        ng-class="{colored: vm.isCellColored(row, col)}"  ng-click="vm.removeColor(row, col)"></li>
        </ul>
     </div>
+    <div class="action-container">
+      <div class="action-start" ng-click="vm.start()">Start</div>
+    </div>
   </div>
-  <script type="text/javascript" src="angular.min.js"></script>
+  <script type="text/javascript" src="libs/angular.min.js"></script>
+  <script type="text/javascript" src="libs/underscore-min.js"></script>
   <script type="text/javascript" src="components/grid/grid.service.js"></script>
   <script type="text/javascript" src="components/grid/grid.controller.js"></script>
   <script type="text/javascript" src="components/grid/grid.module.js"></script>
