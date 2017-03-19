@@ -41,7 +41,9 @@
       }
 
       function getRandomColeredCellIds(count) {
-        return ['c-11', 'c-22', 'c-33', 'c-44', 'c-14'];
+        var copy = _cellIds.slice(0);
+        copy = shuffleArray(copy);
+        return [copy.pop(), copy.shift(), copy.pop(), copy.shift(), copy.pop()];
       }
 
       function getCellId(row, col) {
@@ -49,11 +51,18 @@
       }
 
       function _getCellIds() {
-        for(var r = 1; r <= service.game.rows; r++) {
-          for(var c = 1; c <= service.game.columns; c++) {
+        var ids = [];
+        for(var r = 1; r <= service.game.rows.length; r++) {
+          for(var c = 1; c <= service.game.columns.length; c++) {
             ids.push(getCellId(r, c));
           }
         }
+        return ids;
+      }
+
+      function shuffleArray(o) {
+        for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+        return o;
       }
     }
 })();
