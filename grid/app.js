@@ -1,3 +1,4 @@
 (function() {
-  angular.module('grid.game.app', []);
+  'use strict';
+  angular.module('grid.game.app', ['grid.controller']);
 })();

@@ -1,11 +1,12 @@
 (function() {
   angular
-  	.module('grid.controller', [])
-  	.controller('GridController', GridController);
+    .module('grid.controller', [])
+    .controller('GridController', GridController);
 
-  	GridController.$inject = [];
+    GridController.$inject = ['$scope', 'GridService'];
 
-  	function GridController() {
-
-  	}
+    function GridController($scope, GridService) {
+      var vm = this;
+      
+    }
 })();
