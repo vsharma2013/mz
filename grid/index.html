@@ -17,7 +17,7 @@
     </div>
     <div class="grid-container">
       <ul class="cell-list" ng-repeat="row in vm.game.rows"> 
-        <li class= "cell-item" ng-repeat="col in vm.game.columns" ng-attr-id="{{ 'c-' + $parent.$index + $index}}" 
+        <li class= "cell-item" ng-repeat="col in vm.game.columns" ng-attr-id="vm.getCellId(row,col)" 
         ng-class="{colored: vm.isCellColored(row, col)}"  ng-click="vm.removeColor(row, col)"></li>
        </ul>
     </div>
