@@ -13,15 +13,12 @@
       };
 
       vm.isCellColored = function(row, col) {
-        return gridService.isCellColored(getCellId(row, col));
+        return gridService.isCellColored(row, col);
       };
 
       vm.removeColor = function(row, col) {
-        gridService.removeColoredCell(getCellId(row, col));
+        gridService.removeColoredCell(row, col);
       };
-
-      function getCellId(row, col) {
-        return 'c-'+ (row-1) + (col-1);
-      }     
+   
     }
 })();
