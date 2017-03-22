@@ -28,11 +28,16 @@
       <h2 class="action-success">Congratulations you have won the game !!!</h2>
     </div>
   </div>
+
+  <div class="dummy-container" ng-controller="dummyController as dc">
+    <h2>Last modified at : {{gridService.modifiedAt}}</h2>
+  </div>
   <script type="text/javascript" src="libs/angular.min.js"></script>
   <script type="text/javascript" src="libs/underscore-min.js"></script>
   <script type="text/javascript" src="components/grid/grid.service.js"></script>
   <script type="text/javascript" src="components/grid/grid.controller.js"></script>
   <script type="text/javascript" src="components/grid/grid.module.js"></script>
+  <script type="text/javascript" src="dummyController.js"></script>
   <script type="text/javascript" src="app.js"></script>
 </body>
 </html>

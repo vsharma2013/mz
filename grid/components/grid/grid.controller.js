@@ -33,6 +33,7 @@
       };
 
       vm.isCellColored = function(row, col) {
+        gridService.modifiedAt = Date.now();
         return gridService.isCellColored(row, col);
       };
 

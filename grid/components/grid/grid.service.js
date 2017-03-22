@@ -17,7 +17,8 @@
         start: start,
         isCellColored: isCellColored,
         removeColoredCell: removeColoredCell,
-        getColoredCells: function() { return _coleredCells; }
+        getColoredCells: function() { return _coleredCells; },
+        modifiedAt: Date.now()
       };
 
       _cellIds = _getCellIds();

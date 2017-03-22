@@ -5,12 +5,25 @@
   <link rel="stylesheet" type="text/css" href="styles/angular-material.min.css">
   <link rel="stylesheet" type="text/css" href="styles/styles.css">
 </head>
-<body>
+<body ng-app="MyApp">
+
+
+  <div class="app-container">
+    <div class="group-container1" md-whiteframe="1">
+      
+    </div>
+  </div>
+<md-button class="md-fab md-accent" aria-label="Play">
+  <md-tooltip>Play Music</md-tooltip>
+  <md-icon md-svg-src="img/icons/ic_play_arrow_24px.svg"></md-icon>
+</md-button>
+<h2 md-truncate style="max-width: 100px;">Some Title With a Lot of Text</h2>
 
   <script type="text/javascript" src="libs/angular.min.js"></script>
   <script type="text/javascript" src="libs/angular-animate.min.js"></script>
   <script type="text/javascript" src="libs/angular-aria.min.js"></script>
   <script type="text/javascript" src="libs/angular-material.min.js"></script>
   <script type="text/javascript" src="libs/angular-messages.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
