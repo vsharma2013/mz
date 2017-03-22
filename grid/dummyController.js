@@ -9,8 +9,9 @@
   function dummyController($scope, gridService) {
     $scope.gridService = gridService;
 
-    $scope.$watch('gridService.modifiedAt', function() {
-    	console.log(arguments);
+    $scope.$watch('gridService.modifiedAt', function(newVal, oldVal) {
+    	if((newVal - oldVal)  > 100)
+    		console.log(arguments);
     });
   }
 })();
